@@ -10,6 +10,7 @@ from fastapi.responses import RedirectResponse
 from fastapi import FastAPI, Depends, HTTPException, Request
 from fastapi.templating import Jinja2Templates
 from nicegui import app, ui
+import secrets
 
 # Create users from 01 to 14 with password 999
 passwords = {f'{i:02}': '999' for i in range(1, 15)}
@@ -56,6 +57,6 @@ def home_page() -> None:
 
 
 
-
 if __name__ in {"__main__", "__mp_main__"}:
-    ui.run()
+    storage_secret_key = secrets.token_hex(16)
+    ui.run(storage_secret=storage_secret_key)
