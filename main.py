@@ -54,5 +54,8 @@ def home_page() -> None:
                 ui.separator()
                 ui.menu_item('Close', on_click=menu.close)
 
+
+
+
 if __name__ in {"__main__", "__mp_main__"}:
     ui.run()
