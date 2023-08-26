@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+
 """This is just a very simple authentication example.
 
 Please see the `OAuth2 example at FastAPI <https://fastapi.tiangolo.com/tutorial/security/simple-oauth2/>`_  or
@@ -20,9 +21,8 @@ def main_page() -> None:
     with ui.column().classes('absolute-center items-center'):
         ui.label(f'Hello {app.storage.user["username"]}!').classes('text-2xl')
         ui.button(on_click=lambda: (app.storage.user.clear(), ui.open('/login')), icon='logout').props('outline round')
+
 templates = Jinja2Templates(directory="templates")
-
-
 
 @ui.page('/login')
 def login() -> None:
@@ -41,7 +41,6 @@ def login() -> None:
         password = ui.input('Password', password=True, password_toggle_button=True).on('keydown.enter', try_login)
         ui.button('Log in', on_click=try_login)
 
-
 @ui.page('/home')
 def home_page() -> None:
     with ui.row().classes('w-full items-center'):
@@ -55,6 +54,5 @@ def home_page() -> None:
                 ui.separator()
                 ui.menu_item('Close', on_click=menu.close)
 
-ui.run(storage_secret='THIS_NEEDS_TO_BE_CHANGED')
-
-ui.run(storage_secret='THIS_NEEDS_TO_BE_CHANGED')
+if __name__ in {"__main__", "__mp_main__"}:
+    ui.run(storage_secret='THIS_NEEDS_TO_BE_CHANGED')
