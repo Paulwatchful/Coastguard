@@ -55,4 +55,4 @@ def home_page() -> None:
                 ui.menu_item('Close', on_click=menu.close)
 
 if __name__ in {"__main__", "__mp_main__"}:
-    pass
+    ui.run()
