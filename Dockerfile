@@ -12,4 +12,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 # Use uvicorn to run your FastAPI app
 ENTRYPOINT ["uvicorn"]
-CMD ["main:app", "--host", "0.0.0.0", "--port", "80", "--workers", "1"]
+CMD ["main:fastapi_app", "--host", "0.0.0.0", "--port", "80", "--workers", "1"]

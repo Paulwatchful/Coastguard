@@ -58,5 +58,4 @@ def home_page() -> None:
 
 
 if __name__ in {"__main__", "__mp_main__"}:
-    storage_secret_key = secrets.token_hex(16)
-    ui.run(storage_secret=storage_secret_key)
+    ui.run()
